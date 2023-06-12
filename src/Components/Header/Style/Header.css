@@ -1,0 +1,29 @@
+.Header {
+    width: 100vw;
+    padding: 25px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #eeeeee;
+}
+
+.Header .Header__logo {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 20px;
+    color: #141414;
+}
+
+@media screen and (max-width: 800px) {
+    .Header {
+        padding: 25px;
+        justify-content: center;
+    }
+
+    .Header .Header__logo {
+        display: none;
+    }
+}
