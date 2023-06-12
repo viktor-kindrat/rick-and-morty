@@ -1,6 +1,6 @@
 .Header {
     width: 100vw;
-    padding: 25px 150px;
+    padding: 10px 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,6 +8,7 @@
     bottom: 0;
     left: 0;
     background: #eeeeee;
+    box-shadow: 0 0 5px #14141450;
 }
 
 .Header .Header__logo {
@@ -15,6 +16,12 @@
     font-weight: 800;
     font-size: 20px;
     color: #141414;
+}
+.Header .Header__logo .Header__logo_green {
+    color: rgb(3, 145, 3);
+}
+.Header .Header__logo .Header__logo_pink {
+    color: rgb(156, 58, 114);
 }
 
 @media screen and (max-width: 800px) {
