@@ -1,9 +1,9 @@
-.Header {
+.Navigation {
     width: 100vw;
     padding: 10px 150px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -11,26 +11,26 @@
     box-shadow: 0 0 5px #14141450;
 }
 
-.Header .Header__logo {
+.Navigation .Navigation__logo {
     text-transform: uppercase;
     font-weight: 800;
     font-size: 20px;
     color: #141414;
 }
-.Header .Header__logo .Header__logo_green {
+.Navigation .Navigation__logo .Navigation__logo_green {
     color: rgb(3, 145, 3);
 }
-.Header .Header__logo .Header__logo_pink {
+.Navigation .Navigation__logo .Navigation__logo_pink {
     color: rgb(156, 58, 114);
 }
 
 @media screen and (max-width: 800px) {
-    .Header {
+    .Navigation {
         padding: 25px;
         justify-content: center;
     }
 
-    .Header .Header__logo {
+    .Navigation .Navigation__logo {
         display: none;
     }
 }
