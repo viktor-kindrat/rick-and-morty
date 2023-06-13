@@ -11,15 +11,24 @@ function Characters() {
     let [pending, setPending] = useState(true);
     let [page, setPage] = useState(1)
     let info = useRef({})
+    let [searchToggler, toggleSearch] = useState(false)
+
+    let [gender, setGender] = useState("");
+    let [status, setStatus] = useState("");
+    let [species, setSpecies] = useState("");
+
     useEffect(() => {
-        fetch("https://rickandmortyapi.com/api/character/?page=" + page)
+        setPending(true)
+        fetch(`https://rickandmortyapi.com/api/character/?page=${page}${gender.length > 0 ? `&gender=${gender}` : ""}${status.length > 0 ? `&status=${status}` : ""}${species.length > 0 ? `&species=${species}` : ""}`)
             .then(res => res.json())
             .then(data => {
                 info.current = data;
                 setPending(false)
                 console.log(data)
             })
-    }, [page])
+        // eslint-disable-next-line
+    }, [page, searchToggler])
+
     return (
         <section className="Characters">
             <div className="Characters__headline-group">
@@ -28,7 +37,7 @@ function Characters() {
             </div>
             {
                 (info.current && !pending) ? <>
-                    <CharacterFilter/>
+                    <CharacterFilter searchStatus={searchToggler} toggleSearch={toggleSearch} setPending={setPending} gender={gender} setGender={setGender} status={status} setStatus={setStatus} species={species} setSpecies={setSpecies} />
                     <div className="Characters__container">
                         {
                             info.current.results.map((item, index) =>
