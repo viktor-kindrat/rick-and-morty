@@ -4,7 +4,7 @@ import ImgCard from "../ImgCard/ImgCard";
 import CharacterFilter from "../CharacterFilter/CharacterFilter";
 
 import { useRef, useEffect, useState } from "react"
-import { Pagination, Select, MenuItem } from "@mui/material";
+import { Pagination } from "@mui/material";
 
 
 function Characters() {
