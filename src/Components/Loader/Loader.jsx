@@ -17,7 +17,7 @@ function Loader() {
     return (
         <div className="container">
             <div className="contact-card">
-                <div class="avatar"></div>
+                <div className="avatar"></div>
                 <div className="text"></div>
             </div>
             <div className="contact-card">

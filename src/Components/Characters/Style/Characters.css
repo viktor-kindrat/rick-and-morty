@@ -57,3 +57,9 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+@media screen and (max-width: 800px) {
+    .Characters {
+        padding: 25px 25px 100px 25px;
+    }
+}
