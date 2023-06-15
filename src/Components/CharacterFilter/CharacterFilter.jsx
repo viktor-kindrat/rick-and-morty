@@ -28,6 +28,7 @@ function CharacterFilter({ searchStatus, toggleSearch, gender, setGender, status
                         label="Gender"
                         onChange={genderHandleChange}
                     >
+                        <MenuItem value="">All</MenuItem>
                         <MenuItem value="male">Male</MenuItem>
                         <MenuItem value="female">Female</MenuItem>
                         <MenuItem value="genderless">Genderless</MenuItem>
@@ -45,6 +46,7 @@ function CharacterFilter({ searchStatus, toggleSearch, gender, setGender, status
                         label="Status"
                         onChange={statusHandleChange}
                     >
+                        <MenuItem value="">All</MenuItem>
                         <MenuItem value="alive">Alive</MenuItem>
                         <MenuItem value="dead">Dead</MenuItem>
                         <MenuItem value="unknown">Unknown</MenuItem>

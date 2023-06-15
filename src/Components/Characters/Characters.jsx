@@ -2,6 +2,7 @@ import "./Style/Characters.css"
 import Loader from "../Loader/Loader";
 import ImgCard from "../ImgCard/ImgCard";
 import CharacterFilter from "../CharacterFilter/CharacterFilter";
+import CharPopup from "../CharPopup/CharPopup";
 
 import { useRef, useEffect, useState } from "react"
 import { Pagination } from "@mui/material";
@@ -11,7 +12,14 @@ function Characters() {
     let [pending, setPending] = useState(true);
     let [page, setPage] = useState(1)
     let info = useRef({})
-    let [searchToggler, toggleSearch] = useState(false)
+    let [searchToggler, toggleSearch] = useState(false);
+
+    let [popupVisible, setPopupVisibility] = useState(false);
+    let popupInfo = useRef({})
+    let cardClickHandle = (info)=>{
+        popupInfo.current = info;
+        setPopupVisibility(true)
+    }
 
     let [gender, setGender] = useState("");
     let [status, setStatus] = useState("");
@@ -31,6 +39,7 @@ function Characters() {
 
     return (
         <section className="Characters">
+            <CharPopup data={popupInfo.current} popupVisible={popupVisible} setPopupVisibility={setPopupVisibility}/>
             <div className="Characters__headline-group">
                 <h2 className="Characters__headline">Characters</h2>
                 <span className="Characters__subheadline">On this page you can find information about all characters. Enter your query on filters or view all. Click on card to get full info about the character</span>
@@ -41,7 +50,7 @@ function Characters() {
                     <div className="Characters__container">
                         {
                             info.current.results.map((item, index) =>
-                                <ImgCard key={index} data={item} />
+                                <ImgCard clickHandle={cardClickHandle} key={index} data={item} />
                             )
                         }
                     </div>
