@@ -13,7 +13,6 @@ function Navigation() {
     let [tab, setTab] = useState(localStorage.getItem("page") || 0);
     return (
         <nav className="Navigation">
-            {/* <span className="Navigation__logo"><span className="Navigation__logo_green">Rick</span>&<span className="Navigation__logo_pink">Morty</span></span> */}
             <BottomNavigation
                 showLabels
                 value={tab}
@@ -23,10 +22,10 @@ function Navigation() {
                 }}
             >
                 <BottomNavigationAction href={"/"} sx={{ background: "#eeeeee" }} label="Home" icon={<img src={homeIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"/character"} sx={{ background: "#eeeeee" }} label="Characters" icon={<img src={charactersIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"/episode"} sx={{ background: "#eeeeee" }} label="Episodes" icon={<img src={episodesIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"/location"} sx={{ background: "#eeeeee" }} label="Locations" icon={<img src={locationsIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"/watchlist"} sx={{ background: "#eeeeee" }} label="Watchlist" icon={<img src={watchListIcon} alt="menu item" />} />
+                <BottomNavigationAction href={"character"} sx={{ background: "#eeeeee" }} label="Characters" icon={<img src={charactersIcon} alt="menu item" />} />
+                <BottomNavigationAction href={"episode"} sx={{ background: "#eeeeee" }} label="Episodes" icon={<img src={episodesIcon} alt="menu item" />} />
+                <BottomNavigationAction href={"location"} sx={{ background: "#eeeeee" }} label="Locations" icon={<img src={locationsIcon} alt="menu item" />} />
+                <BottomNavigationAction href={"watchlist"} sx={{ background: "#eeeeee" }} label="Watchlist" icon={<img src={watchListIcon} alt="menu item" />} />
             </BottomNavigation>
         </nav>
     )
