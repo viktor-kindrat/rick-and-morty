@@ -30,6 +30,9 @@ function CharPopup({ data, popupVisible, setPopupVisibility }) {
             })
         }
     }, [popupVisible])
+    useEffect(() => {
+        gsap.set(".CharPopup", { yPercent: -100 })
+    })
     return (
         <div className="CharPopup">
             <Grid
@@ -51,8 +54,8 @@ function CharPopup({ data, popupVisible, setPopupVisibility }) {
                         boxShadow: "0 0 15px #14141450",
                     }}>
                         <Grid container
-                        alignItems="center"
-                        justifyContent="flex-end"
+                            alignItems="center"
+                            justifyContent="flex-end"
                         >
                             <IconButton onClick={() => setPopupVisibility(false)} aria-label="close popup">
                                 <CloseIcon sx={{ color: "#141414" }} fontSize="medium" />
@@ -71,10 +74,10 @@ function CharPopup({ data, popupVisible, setPopupVisibility }) {
                             justifyContent="center"
                             spacing={2}
                         >
-                            <Grid item sm="12" lg="6" sx={{width: "300px", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                            <Grid item sm="12" lg="6" sx={{ width: "300px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <img className="CharPopup__image" width={300} src={data.image} alt="popup avatar" />
                             </Grid>
-                            <Grid 
+                            <Grid
                                 item
                                 sm="12"
                                 lg="6"
@@ -84,25 +87,25 @@ function CharPopup({ data, popupVisible, setPopupVisibility }) {
                                 gap="25px"
                             >
                                 {
-                                    Object.keys(data).filter(item=>data[item] !== "").map(item=>{
+                                    Object.keys(data).filter(item => data[item] !== "").map(item => {
                                         const blockedKeys = ["name", "image", "id", "episode", "url", "created"]
                                         if (blockedKeys.indexOf(item.toLowerCase()) === - 1) {
                                             return (
                                                 <div className="CharPopup__property"><span className="CharPopup__property-name">{item}: </span> {
-                                                    (typeof(data[item]) === "object") ? Object.keys(data[item]).map(key => {
+                                                    (typeof (data[item]) === "object") ? Object.keys(data[item]).map(key => {
                                                         if (["url"].indexOf(key.toLowerCase()) === -1) {
                                                             return (
                                                                 <div>
-                                                                    <span className="CharPopup__property-name_2" style={{marginLeft: "15px"}}>{key}: </span>{(typeof(data[item][key]) !== "object") ? data[item][key] : ""}
+                                                                    <span className="CharPopup__property-name_2" style={{ marginLeft: "15px" }}>{key}: </span>{(typeof (data[item][key]) !== "object") ? data[item][key] : ""}
                                                                 </div>
                                                             )
                                                         }
                                                         return ""
-                                                    }) : (typeof(data[item]) === "string") ? data[item] : ""
+                                                    }) : (typeof (data[item]) === "string") ? data[item] : ""
                                                 }</div>
                                             )
                                         } else if (item.toLowerCase() === "created") {
-                                            return(
+                                            return (
                                                 <div className="CharPopup__property"><span className="CharPopup__property-name">{item}: </span> {`${new Date(data.created).toLocaleString().slice(0, new Date(data.created).toLocaleString().indexOf(","))}`}</div>
                                             )
                                         }
