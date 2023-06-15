@@ -20,6 +20,7 @@ function CharacterFilter({ searchStatus, toggleSearch, gender, setGender, status
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <InputLabel id="gender-label">Gender</InputLabel>
                     <Select
+                        color="success"
                         fullWidth
                         sx={{ minWidth: "150px" }}
                         labelId="gender-label"
@@ -38,6 +39,7 @@ function CharacterFilter({ searchStatus, toggleSearch, gender, setGender, status
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <InputLabel id="status-label">Status</InputLabel>
                     <Select
+                        color="success"
                         fullWidth
                         sx={{ minWidth: "150px" }}
                         labelId="status-label"
@@ -54,9 +56,9 @@ function CharacterFilter({ searchStatus, toggleSearch, gender, setGender, status
                 </Box>
                 <Box sx={{ margin: "0", padding: "0" }}>
                     <InputLabel id="species-label">Species</InputLabel>
-                    <TextField id="outlined-basic" labelId="species-label" variant="outlined" onChange={speciesHandleChange} />
+                    <TextField color="success" id="outlined-basic" labelId="species-label" variant="outlined" onChange={speciesHandleChange} />
                 </Box>
-                <Button onClick={()=>toggleSearch(!searchStatus)} defValue={species} sx={{ height: "55px" }} size={"large"} variant="contained" color="success" endIcon={<FilterAltIcon />}>
+                <Button onClick={() => toggleSearch(!searchStatus)} defValue={species} sx={{ height: "55px" }} size={"large"} variant="contained" color="success" endIcon={<FilterAltIcon />}>
                     Apply filters
                 </Button>
             </Box>
