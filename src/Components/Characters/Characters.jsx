@@ -3,6 +3,7 @@ import Loader from "../UI/Loader/Loader";
 import ImgCard from "../UI/ImgCard/ImgCard";
 import CharacterFilter from "./CharacterFilter/CharacterFilter";
 import CharPopup from "../UI/InfoPopup/InfoPopup";
+import HeadlineGroup from "../UI/HeadlineGroup/HeadlineGroup"
 
 import { useRef, useEffect, useState } from "react"
 import { Pagination } from "@mui/material";
@@ -16,7 +17,7 @@ function Characters() {
 
     let [popupVisible, setPopupVisibility] = useState(false);
     let popupInfo = useRef({})
-    let cardClickHandle = (info)=>{
+    let cardClickHandle = (info) => {
         popupInfo.current = info;
         setPopupVisibility(true)
     }
@@ -32,18 +33,15 @@ function Characters() {
             .then(data => {
                 info.current = data;
                 setPending(false)
-                console.log(data)
             })
+            .catch(e => console.error(e))
         // eslint-disable-next-line
     }, [page, searchToggler])
 
     return (
         <section className="Characters">
-            <CharPopup data={popupInfo.current} popupVisible={popupVisible} setPopupVisibility={setPopupVisibility}/>
-            <div className="Characters__headline-group">
-                <h2 className="Characters__headline">Characters</h2>
-                <span className="Characters__subheadline">On this page you can find information about all characters. Enter your query on filters or view all. Click on card to get full info about the character</span>
-            </div>
+            <CharPopup data={popupInfo.current} popupVisible={popupVisible} setPopupVisibility={setPopupVisibility} />
+            <HeadlineGroup headline="Characters" subheadline="On this page you can find information about all characters. Enter your query on filters or view all. Click on card to get full info about the character" />
             {
                 (info.current && !pending) ? <>
                     <CharacterFilter searchStatus={searchToggler} toggleSearch={toggleSearch} setPending={setPending} gender={gender} setGender={setGender} status={status} setStatus={setStatus} species={species} setSpecies={setSpecies} />
@@ -55,9 +53,11 @@ function Characters() {
                         }
                     </div>
                     {console.log(info.current)}
-                    <Pagination onChange={(e, page) => {
-                        setPage(page)
-                        setPending(true)
+                    <Pagination onChange={(e, val) => {
+                        if (val !== page) {
+                            setPage(val)
+                            setPending(true)
+                        }
                     }} count={info.current.info.pages} page={page} color="success" />
                 </> : <Loader />
             }
