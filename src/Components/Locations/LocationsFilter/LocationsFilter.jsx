@@ -10,7 +10,7 @@ function LocationsFilter({ setPending, setFilterData }) {
     let applyFilter = useCallback((e) => {
         setPending(true);
         setFilterData({ name: name, type: type, dimension: dimension })
-    })
+    }, [name, dimension, type, setFilterData, setPending])
     return (
         <div className="LocationsFilter">
             <Grid container direction="row" wrap="wrap" alignItems="center" justifyContent="center" spacing={2}>
