@@ -1,3 +1,5 @@
+import "@fontsource/roboto/900.css"
+import "@fontsource/roboto/400.css"
 import { Grid } from "@mui/material"
 
 function TextCard ({name, field, value}) {
@@ -19,10 +21,10 @@ function TextCard ({name, field, value}) {
                 }}
                 >
                 <Grid item>
-                    <h3 className="TextCard__headline">{name ? name : "*without name*"}</h3>
+                    <h3 style={{fontSize: "16px", fontFamily: "Roboto, sans-serif", fontWeight: "900", color: "#141414"}} className="TextCard__headline">{name ? name : "*without name*"}</h3>
                 </Grid>
                 <Grid item>
-                    <span className="TextCard__info">{field}: {value}</span>
+                    <span style={{fontSize: "14px", fontFamily: "Roboto, sans-serif", fontWeight: "400", color: "#333333"}} className="TextCard__info">{field}: {value}</span>
                 </Grid>
             </Grid> 
         </div>

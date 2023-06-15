@@ -1,11 +1,12 @@
 import "./Style/Episodes.css"
+import EpisodesFilter from "./EpisodesFilter/EpisodesFilter"
 
 import { useEffect, useRef, useState, useCallback } from "react"
 
 import Loader from "../UI/Loader/Loader"
 import TextCard from "../UI/TextCard/TextCard"
 import HeadlineGroup from "../UI/HeadlineGroup/HeadlineGroup"
-import { Grid, Pagination } from "@mui/material"
+import { Grid, Pagination, Box } from "@mui/material"
 
 function Episodes() {
     let [pending, setPending] = useState(true);
@@ -42,6 +43,7 @@ function Episodes() {
                 wrap="wrap">
                 {
                     (!pending && info.current) ? <>
+                        <Box mt="25px" mb="25px"><EpisodesFilter/></Box>
                         <Grid container 
                             direction="row"
                         >
