@@ -10,6 +10,6 @@
 
 @media screen and (max-width: 800px) {
     .Episodes {
-        padding: 25px;
+        padding: 25px 25px 125px 25px;
     }
 }

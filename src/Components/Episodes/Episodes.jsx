@@ -53,7 +53,7 @@ function Episodes() {
                 {
                     (!pending && info.current) ? <>
                         <Box mt="25px" mb="25px"><EpisodesFilter setPending={setPending} setFilterInfo={setFilterInfo} /></Box>
-                        <Grid container direction="row">
+                        <Grid container justifyContent="center" direction="row">
                             {info.current.results.map((item, index) => <TextCard key={index} name={item.name} field="Air date" value={item.air_date} />)}
                         </Grid>
                         {(info.current.info.pages === -1) ? "Nothing was found" : <Pagination sx={{ marginTop: "25px" }} onChange={paginationHandler} count={info.current.info.pages} page={page} color="success" />}
