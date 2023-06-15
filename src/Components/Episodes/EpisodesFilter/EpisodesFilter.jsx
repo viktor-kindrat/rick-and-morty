@@ -3,13 +3,15 @@ import { useState } from "react"
 import { TextField, Button, Grid } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 
-function EpisodesFilter({ setFilterInfo, setPending }) {
+function EpisodesFilter({ filterInfo, setFilterInfo, setPending }) {
     let [field, setField] = useState("")
     let handleChange = (e) => setField(e.target.value)
     let applyFilter = (e)=>{
-        setFilterInfo(field);
-        setPending(true)
-        setField("")
+        if (field !== filterInfo) {
+            setFilterInfo(field);
+            setPending(true)
+            setField("")
+        }
     }
     return (
         <div className="EpisodesFilter">

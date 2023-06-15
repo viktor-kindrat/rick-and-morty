@@ -1,9 +1,9 @@
 import "./Style/Navigation.css"
-import charactersIcon from "./Images/characters.svg"
-import episodesIcon from "./Images/episodes.svg"
-import homeIcon from "./Images/home.svg"
-import locationsIcon from "./Images/locations.svg"
-import watchListIcon from "./Images/watchList.svg"
+import PersonIcon from '@mui/icons-material/Person';
+import TvIcon from '@mui/icons-material/Tv';
+import HomeIcon from '@mui/icons-material/Home';
+import RoomIcon from '@mui/icons-material/Room';
+import StarRateIcon from '@mui/icons-material/StarRate';
 
 import { useState } from "react"
 import { BottomNavigation, BottomNavigationAction } from "@mui/material"
@@ -21,11 +21,11 @@ function Navigation() {
                     localStorage.setItem("page", newValue)
                 }}
             >
-                <BottomNavigationAction href={"/"} sx={{ background: "#eeeeee" }} label="Home" icon={<img src={homeIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"character"} sx={{ background: "#eeeeee" }} label="Characters" icon={<img src={charactersIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"episode"} sx={{ background: "#eeeeee" }} label="Episodes" icon={<img src={episodesIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"location"} sx={{ background: "#eeeeee" }} label="Locations" icon={<img src={locationsIcon} alt="menu item" />} />
-                <BottomNavigationAction href={"watchlist"} sx={{ background: "#eeeeee" }} label="Watchlist" icon={<img src={watchListIcon} alt="menu item" />} />
+                <BottomNavigationAction href={"/"} sx={{ background: "#101010", "color": "#ffffff" }} label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction href={"character"} sx={{ background: "#101010", "color": "#ffffff" }} label="Characters" icon={<PersonIcon />} />
+                <BottomNavigationAction href={"episode"} sx={{ background: "#101010", "color": "#ffffff" }} label="Episodes" icon={<TvIcon />} />
+                <BottomNavigationAction href={"location"} sx={{ background: "#101010", "color": "#ffffff" }} label="Locations" icon={<RoomIcon />} />
+                <BottomNavigationAction href={"watchlist"} sx={{ background: "#101010", "color": "#ffffff" }} label="Watchlist" icon={<StarRateIcon />} />
             </BottomNavigation>
         </nav>
     )

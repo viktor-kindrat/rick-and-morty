@@ -12,13 +12,14 @@ function ImgCard ({data, clickHandle}) {
             alignItems: "flex-start",
             justifyContent: "center",
             gap: "15px",
-            boxShadow: "0 4px 15px #14141450",
+            boxShadow: "0 4px 15px #00000050",
+            color: "#ffffff",
             borderRadius: "10px",
-            background: "#ffffff",
+            background: "#141414",
             cursor: "pointer",
             "transition": "0.3s",
             "&:hover": {
-                "background": "#eeeeee"
+                "background": "#333333"
             }
         }}
         onClick={(e)=>{

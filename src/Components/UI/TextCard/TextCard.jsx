@@ -4,7 +4,7 @@ import { Grid } from "@mui/material"
 
 function TextCard ({name, field, value}) {
     return (
-        <div className="TextCard" style={{ width: "250px", border: "1px solid #141414"}}>
+        <div className="TextCard" style={{ width: "250px", border: "1px solid #ffffff"}}>
             <Grid
                 p="15px" 
                 container
@@ -21,10 +21,10 @@ function TextCard ({name, field, value}) {
                 }}
                 >
                 <Grid item>
-                    <h3 style={{fontSize: "16px", fontFamily: "Roboto, sans-serif", fontWeight: "900", color: "#141414"}} className="TextCard__headline">{name ? name : "*without name*"}</h3>
+                    <h3 style={{fontSize: "16px", fontFamily: "Roboto, sans-serif", fontWeight: "900", color: "#ffffff"}} className="TextCard__headline">{name ? name : "*without name*"}</h3>
                 </Grid>
                 <Grid item>
-                    <span style={{fontSize: "14px", fontFamily: "Roboto, sans-serif", fontWeight: "400", color: "#333333"}} className="TextCard__info">{field}: {value}</span>
+                    <span style={{fontSize: "14px", fontFamily: "Roboto, sans-serif", fontWeight: "400", color: ""}} className="TextCard__info">{field}: {value}</span>
                 </Grid>
             </Grid> 
         </div>

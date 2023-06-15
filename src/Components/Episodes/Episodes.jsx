@@ -52,7 +52,7 @@ function Episodes() {
                 wrap="wrap">
                 {
                     (!pending && info.current) ? <>
-                        <Box mt="25px" mb="25px"><EpisodesFilter setPending={setPending} setFilterInfo={setFilterInfo} /></Box>
+                        <Box mt="25px" mb="25px"><EpisodesFilter filterInfo={filterInfo} setPending={setPending} setFilterInfo={setFilterInfo} /></Box>
                         <Grid container justifyContent="center" direction="row">
                             {info.current.results.map((item, index) => <TextCard key={index} name={item.name} field="Air date" value={item.air_date} />)}
                         </Grid>

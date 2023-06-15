@@ -3,6 +3,7 @@ import Characters from "../../Characters/Characters";
 import Episodes from "../../Episodes/Episodes";
 import Locations from "../../Locations/Locations";
 import Watchlist from "../../Watchlist/Watchlist";
+import Home from "../Home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -11,6 +12,7 @@ function Main() {
         <main className="Main">
             <BrowserRouter>
                 <Routes>
+                    <Route path="/" element={<Home/>}></Route>
                     <Route path="character" element={<Characters/>}></Route>
                     <Route path="episode" element={<Episodes/>}></Route>
                     <Route path="location" element={<Locations/>}></Route>

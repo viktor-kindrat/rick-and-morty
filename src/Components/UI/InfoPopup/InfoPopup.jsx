@@ -51,14 +51,14 @@ function InfoPopup({ data, popupVisible, setPopupVisibility }) {
                         height: "auto",
                         background: "#ffffff",
                         borderRadius: "10px",
-                        boxShadow: "0 0 15px #14141450",
+                        boxShadow: "0 0 15px #ffffff50",
                     }}>
                         <Grid container
                             alignItems="center"
                             justifyContent="flex-end"
                         >
                             <IconButton onClick={() => setPopupVisibility(false)} aria-label="close popup">
-                                <CloseIcon sx={{ color: "#141414" }} fontSize="medium" />
+                                <CloseIcon sx={{ color: "#ffffff" }} fontSize="medium" />
                             </IconButton>
                         </Grid>
                         <Box mt="5px" mb="25px">
