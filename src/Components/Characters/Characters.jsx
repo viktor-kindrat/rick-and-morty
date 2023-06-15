@@ -1,8 +1,8 @@
 import "./Style/Characters.css"
-import Loader from "../Loader/Loader";
-import ImgCard from "../ImgCard/ImgCard";
-import CharacterFilter from "../CharacterFilter/CharacterFilter";
-import CharPopup from "../CharPopup/CharPopup";
+import Loader from "../UI/Loader/Loader";
+import ImgCard from "../UI/ImgCard/ImgCard";
+import CharacterFilter from "./CharacterFilter/CharacterFilter";
+import CharPopup from "../UI/InfoPopup/InfoPopup";
 
 import { useRef, useEffect, useState } from "react"
 import { Pagination } from "@mui/material";

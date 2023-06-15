@@ -1,5 +1,5 @@
 import "./Style/Main.css"
-import Characters from "../Characters/Characters";
+import Characters from "../../Characters/Characters";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
