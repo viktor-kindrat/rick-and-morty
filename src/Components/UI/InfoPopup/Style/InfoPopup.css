@@ -10,7 +10,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: #00000050
+    transform: translateY(-100%);
+    background: #00000050;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
 }
 
 .CharPopup__headline_2 {
