@@ -1,0 +1,10 @@
+.Locations {
+    width: 100%;
+    padding: 25px 150px 100px 150px;
+}
+
+@media screen and (max-width: 800px) {
+    .Locations {
+        padding: 25px 25px 100px 25px;
+    }
+}

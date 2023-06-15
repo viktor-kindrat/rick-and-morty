@@ -25,7 +25,6 @@ function Episodes() {
                     info.current.results = []
                     setPending(false)
                 } else {
-                    console.log(data)
                     info.current = data
                     setPending(false)
                 }
