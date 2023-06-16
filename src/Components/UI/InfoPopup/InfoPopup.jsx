@@ -49,9 +49,9 @@ function InfoPopup({ data, popupVisible, setPopupVisibility }) {
                         padding: "25px",
                         width: "min(750px, 100%)",
                         height: "auto",
-                        background: "#ffffff",
+                        background: "#333333",
                         borderRadius: "10px",
-                        boxShadow: "0 0 15px #ffffff50",
+                        boxShadow: "0 0 15px #14141450",
                     }}>
                         <Grid container
                             alignItems="center"

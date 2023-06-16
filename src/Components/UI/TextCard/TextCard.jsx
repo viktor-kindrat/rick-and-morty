@@ -16,7 +16,7 @@ function TextCard ({name, field, value}) {
                     cursor: "pointer",
                     transition: "0.3s",
                     "&:hover": {
-                        background: "#eeeeee"
+                        background: "#333333"
                     }
                 }}
                 >
