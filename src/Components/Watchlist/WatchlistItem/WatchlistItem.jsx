@@ -1,4 +1,4 @@
-import { Grid, Typography, IconButton } from "@mui/material"
+import { Grid, Typography, IconButton, Tooltip } from "@mui/material"
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
@@ -11,12 +11,16 @@ function WatchlistItem({ watchlistDispach, data }) {
                     {data.name}
                 </Typography>
                 <Grid item>
-                    <IconButton onClick={()=> watchlistDispach({ type: "removeSeries", id: data.id })} aria-label="delete" sx={{ color: "#fa1622" }}>
-                        <DeleteIcon />
-                    </IconButton>
-                    <IconButton onClick={() => watchlistDispach({ type: "toggleWatched", id: data.id })} aria-label="set done" sx={{ color: (data.isWatched) ? "#d4b508" : "#ffffff" }}>
-                        <VisibilityIcon />
-                    </IconButton>
+                    <Tooltip placement="top" title="Remove">
+                        <IconButton onClick={()=> watchlistDispach({ type: "removeSeries", id: data.id })} aria-label="delete" sx={{ color: "#fa1622" }}>
+                            <DeleteIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip placement="top" title={`Mark as ${data.isWatched ? "not viewed" : "viewed"}`}>
+                        <IconButton onClick={() => watchlistDispach({ type: "toggleWatched", id: data.id })} aria-label="set done" sx={{ color: (data.isWatched) ? "#d4b508" : "#ffffff" }}>
+                            <VisibilityIcon />
+                        </IconButton>
+                    </Tooltip>
                 </Grid>
             </Grid>
         </div>
