@@ -1,5 +1,3 @@
-import "./Style/Watchlist.css"
-
 import HeadlineGroup from "../UI/HeadlineGroup/HeadlineGroup"
 import WatchlistSearch from "./WatchlistSearch/WatchlistSearch"
 import WatchlistItem from "./WatchlistItem/WatchlistItem"

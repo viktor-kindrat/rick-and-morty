@@ -1,56 +1,45 @@
-* {
-    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
 .InfoPopup {
-    padding: 25px;
-    z-index: 2000;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #00000050;
+  padding: 25px;
+  z-index: 2000;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3137254902);
 }
-
-.InfoPopup__headline_2 {
-    font-size: 25px;
-    color: ;
-    text-align: center;
-    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
+.InfoPopup .InfoPopup__headline_2 {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
 }
-
-.InfoPopup__image {
-    width: 300px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+.InfoPopup .InfoPopup__image {
+  width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
-
-.InfoPopup__property {
-    margin: 10px 0;
-    font-size: 15px;
+.InfoPopup .InfoPopup__property {
+  margin: 10px 0;
+  font-size: 15px;
 }
-
-.InfoPopup__property-name {
-    font-weight: 700;
-    text-transform: capitalize;
+.InfoPopup .InfoPopup__property .InfoPopup__property-name {
+  font-weight: 700;
+  text-transform: capitalize;
 }
-
-.InfoPopup__property-name_2 {
-    font-weight: 500;
-    text-transform: capitalize;
-    opacity: 0.9;
+.InfoPopup .InfoPopup__property .InfoPopup__property-name_2 {
+  font-weight: 500;
+  text-transform: capitalize;
+  opacity: 0.9;
 }
-
-.InfoPopup__subheadline {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    opacity: 0.5;
+.InfoPopup .InfoPopup__subheadline {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
 }

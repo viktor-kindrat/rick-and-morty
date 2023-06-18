@@ -1,5 +1,3 @@
-import "./Style/ImgCard.css"
-
 import Box from '@mui/material/Box';
 
 function ImgCard ({data, clickHandle}) {

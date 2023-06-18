@@ -1,5 +1,3 @@
-import "./Style/CharacterFilter.css"
-
 import { useCallback } from "react"
 import { Select, MenuItem, InputLabel, Box, TextField, Button } from "@mui/material"
 import FilterAltIcon from '@mui/icons-material/FilterAlt';

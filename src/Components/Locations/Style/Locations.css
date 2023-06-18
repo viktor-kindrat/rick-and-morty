@@ -1,10 +1,15 @@
 .Locations {
-    width: 100%;
-    padding: 25px 150px 100px 150px;
+  padding: 25px 150px 100px 150px;
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 800px) {
-    .Locations {
-        padding: 25px 25px 125px 25px;
-    }
+  .Locations {
+    padding: 25px 25px 125px 25px;
+  }
 }

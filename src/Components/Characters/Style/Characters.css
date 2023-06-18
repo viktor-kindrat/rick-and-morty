@@ -1,48 +1,43 @@
 .Characters {
-    padding: 25px 150px 100px 150px;
-    display: flex;
-    gap: 50px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  padding: 25px 150px 100px 150px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.Characters__container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 25px;
-    justify-content: space-around;
+.Characters .Characters__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+  justify-content: space-around;
 }
-
-.Characters__image {
-    height: auto;
-    aspect-ratio: 1/1;
-    width: 100%;
-    object-fit: cover;
+.Characters .Characters__container .Characters__image {
+  height: auto;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
 }
-
-.Characters__text-content {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    justify-content: flex-start;
+.Characters .Characters__container .Characters__text-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  justify-content: flex-start;
 }
-
-.Characters__text-content_bold {
-    max-width: 100%;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: ;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+.Characters .Characters__container .Characters__text-content_bold {
+  max-width: 100%;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
-    .Characters {
-        padding: 25px 25px 100px 25px;
-    }
+  .Characters {
+    padding: 25px 25px 100px 25px;
+  }
 }
