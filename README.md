@@ -39,3 +39,11 @@ We enthusiastically welcome contributions to enhance and improve the Rick and Mo
 ## Good luck!
 
 We wish you the best of luck in developing the Rick and Morty Fan Page. Enjoy the journey of exploring the captivating world of Rick and Morty while creating an extraordinary user experience for fans of the show. If you encounter any questions or require assistance, please don't hesitate to reach out to our dedicated project maintainers.
+
+---
+###### Linked in: https://www.linkedin.com/in/viktor-kindrat/
+---
+###### Github: https://github.com/victor-kindrat
+---
+###### Instagram: https://instagram.com/victor_kindrat?utm_medium=copy_link
+---
