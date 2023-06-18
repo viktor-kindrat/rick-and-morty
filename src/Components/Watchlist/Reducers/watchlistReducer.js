@@ -3,23 +3,26 @@ const reducer = (state, action) =>{
         case "addSeries": {
             let matcher = [...state].filter(item=>(item.name === action.name));
             if (matcher.length === 0) {
-                localStorage.setItem("watchlist", JSON.stringify([...state, {
-                    id: action.id,
-                    name: action.name,
-                    isWatched: action.watched
-                }]))
-                return [...state, {
+                let calculated = [...state, {
                     id: action.id,
                     name: action.name,
                     isWatched: action.watched
                 }]
+                localStorage.setItem("watchlist", JSON.stringify(calculated))
+                return calculated
             } else {
                 return state
             }
         }
         case "removeSeries": {
-            localStorage.setItem("watchlist", [...state].filter(item=>item.id!==action.id))
-            return [[...state].filter(item=>item.id!==action.id)]
+            let calculated = [...state].filter(item=>item.id!==action.id)
+            localStorage.setItem("watchlist", JSON.stringify(calculated))
+            return calculated
+        }
+        case "toggleWatched": {
+            let calculated = [...state].map(item=>(item.id === action.id ? {...item, isWatched: !item.isWatched} : item))
+            localStorage.setItem("watchlist", JSON.stringify(calculated))
+            return calculated
         }
         default: {
             return state

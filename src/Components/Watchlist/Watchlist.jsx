@@ -1,9 +1,10 @@
 import "./Style/Watchlist.css"
 
 import HeadlineGroup from "../UI/HeadlineGroup/HeadlineGroup"
+import WatchlistSearch from "./WatchlistSearch/WatchlistSearch"
+import WatchlistItem from "./WatchlistItem/WatchlistItem"
 
-import { Grid, TextField, Autocomplete, Button } from "@mui/material"
-import AddIcon from '@mui/icons-material/Add';
+import { Grid } from "@mui/material"
 
 import { useReducer, useState, useEffect, useRef } from "react"
 import reducer from "./Reducers/watchlistReducer"
@@ -56,20 +57,11 @@ function Watchlist() {
                 <Grid item>
                     <Grid container direction="column" spacing={3}>
                         <Grid item mb="25px">
-                            <Grid container direction="row" wrap="wrap" alignItems="stretch" justifyContent="center" gap="25px">
-                                {
-                                    (labels && labels.length === count.current) ? <Autocomplete disablePortal id="combo-box-demo" options={labels} sx={{ width: 300 }} value={inputValue} onChange={(e, newVal) => setInputValue(newVal)}
-                                        renderInput={(params) => <TextField {...params} color="success" label="Series name" variant="outlined" />}
-                                    /> : "Loading series. Wait..."
-                                }
-                                <Button {... (inputValue === null) ? {disabled: true} : {}} onClick={handleAdd} variant="contained" color="success" size="large" endIcon={<AddIcon />}>Add to watchlist</Button>
-                            </Grid>
+                            <WatchlistSearch {...{labels, count, setInputValue, inputValue, handleAdd}}/>
                         </Grid>
                         <Grid item>
                             <Grid container direction="column" alignItems="center" justifyContent="center" gap="25px">
-                                {
-                                    (watchlist.length > 0) ? watchlist.map(item=>item.name) : "Anything yet. Write series to watch later in the input above"
-                                }
+                                {(watchlist.length > 0) ? watchlist.map(item=><WatchlistItem key={item.id} watchlistDispach={watchlistDispach} data={item}/>) : "Anything yet. Write series to watch later in the input above"}
                             </Grid>
                         </Grid>
                     </Grid>
