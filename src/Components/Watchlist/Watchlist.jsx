@@ -61,7 +61,7 @@ function Watchlist() {
                         </Grid>
                         <Grid item>
                             <Grid container direction="column" alignItems="center" justifyContent="center" gap="25px">
-                                {(watchlist.length > 0) ? watchlist.map(item=><WatchlistItem key={item.id} watchlistDispach={watchlistDispach} data={item}/>) : "Anything yet. Write series to watch later in the input above"}
+                                {(watchlist.length > 0) ? watchlist.map(item=><WatchlistItem key={item.id} watchlistDispach={watchlistDispach} data={item}/>) : "There isn't anything here yet. Write down in the input above the series to watch later."}
                             </Grid>
                         </Grid>
                     </Grid>
