@@ -2,7 +2,7 @@
 
 ⏳ I made this project for:
 
-[![wakatime](https://wakatime.com/badge/user/36fc7641-7da0-41a7-8648-c61da8a226f7/project/8af8d430-3b3f-4942-be84-aa050d89f602.svg)](https://wakatime.com/badge/user/36fc7641-7da0-41a7-8648-c61da8a226f7/project/8af8d430-3b3f-4942-be84-aa050d89f602)
+[![wakatime](https://wakatime.com/badge/github/viktor-kindrat/rick-and-morty.svg)](https://wakatime.com/badge/github/viktor-kindrat/rick-and-morty)
 
 Welcome to the Rick and Morty Fan Page! This project is a labor of love that I created to celebrate the incredible animated TV series, Rick and Morty. Immerse yourself in the captivating world of the show through this engaging web application that I developed.
 
