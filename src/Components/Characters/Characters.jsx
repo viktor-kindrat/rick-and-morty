@@ -34,14 +34,21 @@ function Characters() {
     }, [page])
 
     useEffect(() => {
+        let x;
         setPending(true)
         fetch(`https://rickandmortyapi.com/api/character/?page=${page}${gender.length > 0 ? `&gender=${gender}` : ""}${status.length > 0 ? `&status=${status}` : ""}${species.length > 0 ? `&species=${species}` : ""}`)
             .then(res => res.json())
             .then(data => {
                 info.current = data;
-                setPending(false)
+                x = setTimeout(() => {
+                    setPending(false)
+                }, 1000);
             })
             .catch(e => console.error(e))
+
+        return () => {
+            clearTimeout(x)
+        }
         // eslint-disable-next-line
     }, [page, searchToggler])
 

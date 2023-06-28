@@ -15,23 +15,33 @@ function Locations() {
     let [filterData, setFilterData] = useState({ name: "", type: "", dimension: "" })
 
     useEffect(() => {
+        let x;
         fetch(`https://rickandmortyapi.com/api/location/?page=${page}${(filterData.name.length > 0) ? `&name=${filterData.name}` : ""}${(filterData.type.length > 0) ? `&type=${filterData.type}` : ""}${(filterData.dimension.length > 0) ? `&dimension=${filterData.dimension}` : ""}`)
             .then(res => res.json())
             .then(data => {
                 if (data.error) {
                     info.current.results = []
-                    setPending(false)
+                    x=setTimeout(() => {
+                        setPending(false)
+                    }, 1000);
                 } else {
                     console.log(data)
                     info.current = data
-                    setPending(false)
+                    x=setTimeout(() => {
+                        setPending(false)
+                    }, 1000);
                 }
             })
             .catch(e => {
                 info.current.results = []
                 info.current.info.pages = -1
-                setPending(false)
+                x=setTimeout(() => {
+                    setPending(false)
+                }, 1000);
             })
+            return ()=>{
+                clearTimeout(x)
+            }
     }, [page, filterData])
 
     let paginationHandler = useCallback((e, val) => {

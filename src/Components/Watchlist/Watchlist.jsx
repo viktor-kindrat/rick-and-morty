@@ -50,10 +50,10 @@ function Watchlist() {
 
     return (
         <section className="Watchlist">
-            <Grid container alignItems="center" justifyContent="center" direction="column" spacing={2}>
+            <Grid container alignItems="center" justifyContent="center" direction="column" >
                 <HeadlineGroup headline="My watch list" subheadline="Here is todo planer for storeing Rick&Morty series to watch later" />
                 <Grid item>
-                    <Grid container direction="column" spacing={3}>
+                    <Grid container direction="column">
                         <Grid item mb="25px">
                             <WatchlistSearch {...{labels, count, setInputValue, inputValue, handleAdd}}/>
                         </Grid>

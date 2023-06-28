@@ -18,22 +18,32 @@ function Episodes() {
 
     useEffect(() => {
         setPending(true)
+        let x;
         fetch(`https://rickandmortyapi.com/api/episode/?page=${page}${(filterInfo.length > 0) ? `&name=${filterInfo}` : ""}`)
             .then(res => res.json())
             .then(data => {
                 if (data.error) {
                     info.current.results = []
-                    setPending(false)
+                    x = setTimeout(() => {
+                        setPending(false)
+                    }, 1000);
                 } else {
                     info.current = data
-                    setPending(false)
+                    x = setTimeout(() => {
+                        setPending(false)
+                    }, 1000);
                 }
             })
             .catch(e => {
                 info.current.results = []
                 info.current.info.pages = -1
-                setPending(false)
+                x = setTimeout(() => {
+                    setPending(false)
+                }, 1000);
             })
+            return ()=>{
+                clearTimeout(x)
+            }
     }, [page, filterInfo])
 
     let paginationHandler = useCallback((e, val) => {
